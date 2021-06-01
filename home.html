@@ -94,9 +94,9 @@
 
         <script>
           $( document ).ready( function() {
-            for(var i=0; i<10; i++){
-              $('.wow').fadeIn(2000);
+            for(var i=0; i<2; i++){
               $('.wow').fadeOut(2000);
+              $('.wow').fadeIn(2000);
             }
           } );
         </script>
@@ -141,38 +141,38 @@
           </div>
         </div>
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="container-fluid" style="background-color:rgba( 0, 0, 0, 0.5 ); padding-top: 30px;">
               <div class="row blog">
                   <div class="container">
                       <div id="blogCarousel" class="carousel slide col-md-12" data-ride="carousel">
+
                           <div class="carousel-inner" style="font-size:20px; height:100px;">
+
                               <div class="carousel-item active">
-                                  <div class="row">
                                       <div class="col-md-12 text-center">
                                         매년 대형 매장, 백화점, 혹은 편의점 등에서<br>
                                            유통기한이 지나 버리게 되는 Last Food의 규모는<br>
                                             <b>“1조 5천억원”</b>에 달한다.
                                       </div>
+                              </div>
+
+                              <div class="carousel-item">
+                                  <div class="text-center">
+                                      라푸라 서비스를 통해,<br>소비자와 판매자 사이의<br><b>“직거래”</b> 가능
                                   </div>
                               </div>
+
                               <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-md-12 text-center">
-                                      라푸라 서비스를 통해,<br>소비자와 판매자 사이의<br><b>“직거래”</b> 가능
-                                    </div>
-                                </div>
+                                  <div class="text-center">
+                                      업체는 <b>"매출"</b>을 늘릴 수 있고,<br>
+                                      소비자는 저렴한 가격에 <b>"구입"</b>할 수 있고,<br>
+                                      환경 면에서 <b>"긍정적 영향"</b>을 줄 수 있다.
+                                  </div>
                               </div>
-                              <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-md-12 text-center">
-                                      <br>
-                                      Could I... BE any more happy with this company?
-                                    </div>
-                                </div>
-                              </div>
+
                           </div>
-                          <br><br><br>
+                          <br><br>
 
                           <!-- 밑 페이지 indicators -->
                           <ol class="carousel-indicators">
@@ -187,7 +187,30 @@
 
       </div>
 
+      <div id="where" class="container-fluid">
+        <p style="text-align:center; font-weight:bold; font-size:30px;">찾아오는 길</p>
 
+        <div id="map" style="width:40%; height: 80%; margin-left:30%"></div>
+
+        <script>
+            function myMap() {
+                var mapCanvas = document.getElementById("map");
+                var myCenter = new google.maps.LatLng(36.625577526423484, 127.4543674705074);
+                var mapOptions = {
+                	center: myCenter,
+                  zoom: 17
+                };
+                var map = new google.maps.Map(mapCanvas, mapOptions);
+
+                var marker = new google.maps.Marker({
+              	position:myCenter
+                });
+                marker.setMap(map);
+            }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAlOjojzJqN5CEy7iGWtTTiWgCMiPUhXI&callback=myMap"></script>
+      </div>
 
 
 
